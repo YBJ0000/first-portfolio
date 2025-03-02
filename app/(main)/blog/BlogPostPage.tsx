@@ -161,12 +161,12 @@ export function BlogPostPage({
                   title={views?.toString()}
                 >
                   <CursorClickIcon />
-                  <span>{prettifyNumber(views ?? 0, true)}次点击</span>
+                  <span>{prettifyNumber(views ?? 0, true)} views</span>
                 </span>
 
                 <span className="inline-flex items-center space-x-1.5">
                   <HourglassIcon />
-                  <span>{post.readingTime.toFixed(0)}分钟阅读</span>
+                  <span>{post.readingTime.toFixed(0)} minutes read</span>
                 </span>
               </motion.div>
             </header>
