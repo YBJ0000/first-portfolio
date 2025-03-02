@@ -14,7 +14,7 @@ import { seo } from '~/lib/seo'
 export const metadata: Metadata = {
   metadataBase: seo.url,
   title: {
-    template: '%s | Cali Castle',
+    template: '%s | Bingjia Yang',
     default: seo.title,
   },
   description: seo.description,

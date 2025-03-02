@@ -7,7 +7,7 @@ import { BlogPosts } from './BlogPosts'
 const description =
   'I share my thoughts and life experiences through my blog.'
 export const metadata = {
-  title: '我的博客',
+  title: 'My blog',
   description,
   openGraph: {
     title: '我的博客',
