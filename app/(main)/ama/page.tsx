@@ -10,7 +10,7 @@ import { Container } from '~/components/ui/Container'
 
 const title = 'About Me'
 const description =
-  "👋 Hi, I’m Bingjia! A basketball lover, music enthusiast, and curious explorer of the world. While I spend a lot of time building things on the web, life is about more than just coding. I believe in teamwork, creativity, and the joy of discovering new experiences."
+  "👋 Hi, I am Bingjia! A basketball lover, music enthusiast, and curious explorer of the world. While I spend a lot of time building things on the web, life is about more than just coding. I believe in teamwork, creativity, and the joy of discovering new experiences."
 
 export const metadata = {
   title,
@@ -56,14 +56,14 @@ export default function AskMeAnythingPage() {
           </li>
           <li>
             <b>☕ Coffee & Conversations</b>: I love deep conversations over a good cup of coffee. 
-            Whether it’s about life, experiences, or random musings, I believe that great ideas often spark from simple talks.
+            Whether it is about life, experiences, or random musings, I believe that great ideas often spark from simple talks.
           </li>
         </ul>
 
         <h2>Let's Connect</h2>
         <p>
           If any of this resonates with you, feel free to reach out! 
-          I’m always happy to connect and share experiences.
+          I am always happy to connect and share experiences.
         </p>
       </article>
 
