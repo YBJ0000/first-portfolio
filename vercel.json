@@ -2,10 +2,5 @@
   "buildCommand": "pnpm turbo build",
   "github": {
     "silent": true
-  },
-  "functions": {
-    "studio/index.js": {
-      "runtime": "edge"
-    }
   }
 }
