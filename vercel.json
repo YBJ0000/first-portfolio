@@ -3,11 +3,9 @@
   "github": {
     "silent": true
   },
-  "routes": [
-    {
-      "src": "/studio(.*)",
-      "dest": "/studio",
+  "functions": {
+    "studio/index.js": {
       "runtime": "edge"
     }
-  ]
+  }
 }
