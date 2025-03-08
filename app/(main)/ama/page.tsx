@@ -47,8 +47,8 @@ export default function AskMeAnythingPage() {
             From casual street games to winning a university intramural championship, I love the thrill of competition and the teamwork it fosters.
           </li>
           <li>
-            <b>🎸 Music</b>: I play the guitar and have performed at various university events. 
-            Music is my creative escape, whether it's jamming with friends or just strumming melodies on my own.
+            <b>🎸 Music</b>: {`I play the guitar and have performed at various university events. 
+            Music is my creative escape, whether it's jamming with friends or just strumming melodies on my own.`}
           </li>
           <li>
             <b>🌍 Travel</b>: Exploring new places, cultures, and foods is something I truly enjoy. 
@@ -60,10 +60,10 @@ export default function AskMeAnythingPage() {
           </li>
         </ul>
 
-        <h2>Let's Connect</h2>
+        <h2>{`Let's Connect`}</h2>
         <p>
-          If any of this resonates with you, feel free to reach out! 
-          I am always happy to connect and share experiences.
+          {`If any of this resonates with you, feel free to reach out! 
+          I am always happy to connect and share experiences.`}
         </p>
       </article>
 
