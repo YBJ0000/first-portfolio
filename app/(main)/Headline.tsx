@@ -80,9 +80,9 @@ export function Headline() {
         }}
       >
         <Balancer>
-          I am a student at University of New South Wales, majoring in Master of Information Technology, seeking internship in full-stack development.
-          Passionate about developing useful applications. 
-          <PeekabooLink href="https://bingjiayang-resume-demo.netlify.app">resume</PeekabooLink>
+        This is Bingjia Yang. I am currently studying at the University of New South Wales, pursuing a Master’s degree in Information Technology and seeking a job in full-stack development.
+        Passionate about developing useful applications. &nbsp;
+          <PeekabooLink href="https://github.com/YBJ0000">My GitHub</PeekabooLink>
         </Balancer>
       </motion.p>
       <motion.div
