@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     default: seo.title,
   },
   description: seo.description,
-  keywords: 'Cali,Cali Castle,郭晓楠,佐玩,创始人,CEO,开发者,设计师,细节控,创新',
+  keywords: 'Bingjia Yang,羊炳嘉,Developer,Designer,Frontend Engineer,Web Developer,React Developer,Next.js',
   manifest: '/site.webmanifest',
   robots: {
     index: true,
