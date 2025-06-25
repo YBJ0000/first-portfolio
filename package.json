@@ -79,6 +79,7 @@
     "sanity": "^3.33.0",
     "sanity-plugin-media": "^2.2.5",
     "valtio": "^1.13.2",
+    "whatwg-url": "^14.2.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {
