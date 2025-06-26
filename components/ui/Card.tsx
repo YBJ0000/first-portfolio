@@ -102,18 +102,22 @@ Card.Cta = function CardCta({ children }: { children: React.ReactNode }) {
   )
 }
 
-Card.Eyebrow = function CardEyebrow({
-  as: Component = 'p',
+type EyebrowTags = 'p' | 'div' | 'span' | 'h1' | 'h2' | 'h3';
+type CardEyebrowProps<T extends EyebrowTags = 'p'> = {
+  as?: T
+  decorate?: boolean
+  className?: string
+  children: React.ReactNode
+} & React.ComponentPropsWithoutRef<T>
+
+Card.Eyebrow = function CardEyebrow<T extends EyebrowTags = 'p'>({
+  as,
   decorate = false,
   className,
   children,
   ...props
-}: {
-  as?: keyof JSX.IntrinsicElements
-  decorate?: boolean
-  className?: string
-  children: React.ReactNode
-} & React.HTMLAttributes<unknown>) {
+}: CardEyebrowProps<T>) {
+  const Component = as || 'p'
   return (
     <Component
       className={clsxm(
