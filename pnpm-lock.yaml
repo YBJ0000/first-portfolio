@@ -23,6 +23,9 @@ importers:
       '@neondatabase/serverless':
         specifier: ^0.9.0
         version: 0.9.5
+      '@netlify/blobs':
+        specifier: ^10.0.1
+        version: 10.0.1
       '@netlify/functions':
         specifier: ^4.1.7
         version: 4.1.7(rollup@4.34.9)
@@ -14447,7 +14450,7 @@ snapshots:
       fast-glob: 3.3.3
       is-glob: 4.0.3
       minimatch: 9.0.5
-      semver: 7.7.1
+      semver: 7.7.2
       ts-api-utils: 2.1.0(typescript@5.8.2)
       typescript: 5.8.2
     transitivePeerDependencies:
@@ -16970,7 +16973,7 @@ snapshots:
       get-it: 8.6.7(debug@4.4.0)
       registry-auth-token: 5.1.0
       registry-url: 5.1.0
-      semver: 7.7.1
+      semver: 7.7.2
     transitivePeerDependencies:
       - debug
 
@@ -18696,7 +18699,7 @@ snapshots:
     dependencies:
       hosted-git-info: 4.1.0
       is-core-module: 2.16.1
-      semver: 7.7.1
+      semver: 7.7.2
       validate-npm-package-license: 3.0.4
 
   normalize-package-data@6.0.2:
