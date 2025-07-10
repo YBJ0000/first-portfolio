@@ -11,6 +11,8 @@ import { zhCN } from '~/lib/clerkLocalizations'
 import { sansFont } from '~/lib/font'
 import { seo } from '~/lib/seo'
 
+import VantaBackgroundSwitcher from "../components/VantaBackgroundSwitcher";
+
 export const metadata: Metadata = {
   metadataBase: seo.url,
   title: {
@@ -83,6 +85,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <VantaBackgroundSwitcher />
             {children}
           </ThemeProvider>
         </body>

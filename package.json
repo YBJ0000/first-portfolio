@@ -78,7 +78,9 @@
     "rss": "^1.2.2",
     "sanity": "^3.33.0",
     "sanity-plugin-media": "^2.2.5",
+    "three": "^0.178.0",
     "valtio": "^1.13.2",
+    "vanta": "^0.5.24",
     "zod": "^3.22.4"
   },
   "devDependencies": {
