@@ -28,7 +28,13 @@ export function ThemeSwitcher() {
     [theme]
   )
 
-  React.useEffect(() => setMounted(true), [])
+  React.useEffect(() => {
+    setMounted(true)
+    if (typeof window !== 'undefined' && window.localStorage) {
+      window.localStorage.removeItem('theme')
+      setTheme('system')
+    }
+  }, [])
 
   function toggleTheme() {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
