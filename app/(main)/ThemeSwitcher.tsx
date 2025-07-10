@@ -34,7 +34,7 @@ export function ThemeSwitcher() {
       window.localStorage.removeItem('theme')
       setTheme('system')
     }
-  }, [])
+  }, [setTheme])
 
   function toggleTheme() {
     setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
