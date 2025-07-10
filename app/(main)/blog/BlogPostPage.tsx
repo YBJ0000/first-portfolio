@@ -27,6 +27,26 @@ import { type PostDetail } from '~/sanity/schemas/post'
 import { BlogPostCard } from './BlogPostCard'
 import { BlogPostTableOfContents } from './BlogPostTableOfContents'
 
+// 在组件顶部添加类型守卫函数
+function hasMetadata(
+  asset: unknown
+): asset is { metadata: { dimensions: { width?: number; height?: number } } } {
+  if (
+    typeof asset === 'object' &&
+    asset !== null &&
+    'metadata' in asset &&
+    typeof (asset as { metadata: unknown }).metadata === 'object' &&
+    (asset as { metadata: { dimensions?: unknown } }).metadata.dimensions &&
+    typeof (asset as { metadata: { dimensions?: unknown } }).metadata.dimensions === 'object'
+  ) {
+    const dims = (asset as { metadata: { dimensions: { width?: unknown; height?: unknown } } }).metadata.dimensions;
+    return (
+      (typeof dims.width === 'number' || typeof dims.height === 'number')
+    );
+  }
+  return false;
+}
+
 export function BlogPostPage({
   post,
   views,
@@ -57,37 +77,26 @@ export function BlogPostPage({
           </Button>
           <article data-postid={post._id}>
             <header className="relative flex flex-col items-center pb-5 after:absolute after:-bottom-1 after:block after:h-px after:w-full after:rounded after:bg-gradient-to-r after:from-zinc-400/20 after:via-zinc-200/10 after:to-transparent dark:after:from-zinc-600/20 dark:after:via-zinc-700/10">
-              <motion.div
-                className="relative mb-7 aspect-[240/135] w-full md:mb-12 md:w-[120%]"
-                initial={{ opacity: 0, scale: 0.96, y: 10 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                transition={{
-                  duration: 0.35,
-                  type: 'spring',
-                  stiffness: 120,
-                  damping: 20,
-                }}
-              >
-                <div className="absolute z-0 hidden aspect-[240/135] w-full blur-xl saturate-150 after:absolute after:inset-0 after:hidden after:bg-white/50 dark:after:bg-black/50 md:block md:after:block">
-                  <Image
-                    src={post.mainImage.asset.url}
-                    alt=""
-                    className="select-none"
-                    unoptimized
-                    fill
-                    aria-hidden={true}
-                  />
-                </div>
-                <Image
-                  src={post.mainImage.asset.url}
-                  alt={post.title}
-                  className="select-none rounded-2xl ring-1 ring-zinc-900/5 transition dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:rounded-3xl"
-                  placeholder="blur"
-                  blurDataURL={post.mainImage.asset.lqip}
-                  unoptimized
-                  fill
-                />
-              </motion.div>
+              <div className="flex justify-center w-full mb-7 md:mb-12">
+                {(() => {
+                  const asset = post.mainImage.asset;
+                  const width = hasMetadata(asset) ? asset.metadata.dimensions.width : 800;
+                  const height = hasMetadata(asset) ? asset.metadata.dimensions.height : 450;
+                  return (
+                    <Image
+                      src={asset.url}
+                      alt={post.title}
+                      className="select-none rounded-2xl ring-1 ring-zinc-900/5 transition dark:ring-0 dark:ring-white/10 dark:hover:border-zinc-700 dark:hover:ring-white/20 md:rounded-3xl"
+                      placeholder="blur"
+                      blurDataURL={asset.lqip}
+                      unoptimized
+                      width={width}
+                      height={height}
+                      style={{ maxWidth: '100%', height: 'auto' }}
+                    />
+                  );
+                })()}
+              </div>
               <motion.div
                 className="flex w-full items-center space-x-4 text-sm font-medium text-zinc-600/80 dark:text-zinc-400/80"
                 initial={{ opacity: 0, y: 10 }}
