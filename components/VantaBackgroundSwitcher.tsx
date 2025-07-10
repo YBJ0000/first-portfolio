@@ -1,8 +1,9 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import VantaHaloBackground from "./VantaHaloBackground";
+
 import VantaGlobeBackground from "./VantaGlobeBackground";
+import VantaHaloBackground from "./VantaHaloBackground";
 
 export default function VantaBackgroundSwitcher() {
   const { resolvedTheme } = useTheme();

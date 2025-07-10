@@ -10,6 +10,7 @@ import { url } from '~/lib'
 import { zhCN } from '~/lib/clerkLocalizations'
 import { sansFont } from '~/lib/font'
 import { seo } from '~/lib/seo'
+
 import VantaBackgroundSwitcher from "../components/VantaBackgroundSwitcher";
 
 export const metadata: Metadata = {

@@ -5,7 +5,7 @@ import HALO from "vanta/dist/vanta.halo.min.js";
 
 export default function VantaHaloBackground() {
   const vantaRef = useRef<HTMLDivElement>(null);
-  const vantaEffect = useRef<any>(null);
+  const vantaEffect = useRef<object | null>(null);
 
   useEffect(() => {
     console.log('Halo useEffect 触发');
@@ -28,8 +28,8 @@ export default function VantaHaloBackground() {
     });
 
     return () => {
-      if (vantaEffect.current) {
-        vantaEffect.current.destroy();
+      if (vantaEffect.current && typeof (vantaEffect.current as { destroy?: () => void }).destroy === 'function') {
+        (vantaEffect.current as { destroy: () => void }).destroy();
         vantaEffect.current = null;
       }
     };
