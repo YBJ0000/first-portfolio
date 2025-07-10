@@ -10,6 +10,7 @@ import { url } from '~/lib'
 import { zhCN } from '~/lib/clerkLocalizations'
 import { sansFont } from '~/lib/font'
 import { seo } from '~/lib/seo'
+import VantaHaloBackground from "../components/VantaHaloBackground";
 
 export const metadata: Metadata = {
   metadataBase: seo.url,
@@ -77,6 +78,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <body className="flex h-full flex-col">
+          <VantaHaloBackground />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
