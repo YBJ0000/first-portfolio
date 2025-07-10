@@ -9,7 +9,6 @@ import { kvKeys } from '~/config/kv'
 import { navigationItems } from '~/config/nav'
 import { db } from '~/db'
 import { subscribers } from '~/db/schema'
-import { env } from '~/env.mjs'
 import { prettifyNumber } from '~/lib/math'
 import { redis } from '~/lib/redis'
 
@@ -45,9 +44,7 @@ function Links() {
 }
 
 async function TotalPageViews() {
-  let views: number
-  // 统一始终通过 redis 获取真实数据
-  views = await redis.incr(kvKeys.totalPageViews)
+  const views = await redis.incr(kvKeys.totalPageViews)
 
   return (
     <span className="flex items-center justify-center gap-1 text-xs text-zinc-500 dark:text-zinc-400 md:justify-start">
