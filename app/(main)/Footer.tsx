@@ -9,7 +9,6 @@ import { kvKeys } from '~/config/kv'
 import { navigationItems } from '~/config/nav'
 import { db } from '~/db'
 import { subscribers } from '~/db/schema'
-import { env } from '~/env.mjs'
 import { prettifyNumber } from '~/lib/math'
 import { redis } from '~/lib/redis'
 
@@ -45,12 +44,7 @@ function Links() {
 }
 
 async function TotalPageViews() {
-  let views: number
-  if (env.VERCEL_ENV === 'production') {
-    views = await redis.incr(kvKeys.totalPageViews)
-  } else {
-    views = 345678
-  }
+  const views = await redis.incr(kvKeys.totalPageViews)
 
   return (
     <span className="flex items-center justify-center gap-1 text-xs text-zinc-500 dark:text-zinc-400 md:justify-start">
@@ -70,14 +64,13 @@ type VisitorGeolocation = {
 }
 async function LastVisitorInfo() {
   let lastVisitor: VisitorGeolocation | undefined = undefined
-  if (env.VERCEL_ENV === 'production') {
-    const [lv, cv] = await redis.mget<VisitorGeolocation[]>(
-      kvKeys.lastVisitor,
-      kvKeys.currentVisitor
-    )
-    lastVisitor = lv
-    await redis.set(kvKeys.lastVisitor, cv)
-  }
+  // 统一始终通过 redis 获取真实数据
+  const [lv, cv] = await redis.mget<VisitorGeolocation[]>(
+    kvKeys.lastVisitor,
+    kvKeys.currentVisitor
+  )
+  lastVisitor = lv
+  await redis.set(kvKeys.lastVisitor, cv)
 
   if (!lastVisitor) {
     lastVisitor = {
