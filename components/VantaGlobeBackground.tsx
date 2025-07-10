@@ -1,30 +1,30 @@
 "use client";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import HALO from "vanta/dist/vanta.halo.min.js";
+import GLOBE from "vanta/dist/vanta.globe.min.js";
 
-export default function VantaHaloBackground() {
+export default function VantaGlobeBackground() {
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<any>(null);
 
   useEffect(() => {
-    console.log('Halo useEffect 触发');
+    console.log('Globe useEffect 触发');
     if (typeof window === "undefined") return;
     if (!vantaRef.current) return;
     if (vantaEffect.current) return;
 
-    vantaEffect.current = HALO({
+    vantaEffect.current = GLOBE({
       el: vantaRef.current,
       THREE,
       mouseControls: true,
       touchControls: true,
+      gyroControls: false,
       minHeight: 200.0,
       minWidth: 200.0,
-      baseColor: 0x222244,
-      backgroundColor: 0x000000,
-      amplitudeFactor: 2.0,
-      xOffset: 0.2,
-      size: 1.2,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color2: 0x606c3,
+      backgroundColor: 0xafd5ed,
     });
 
     return () => {
