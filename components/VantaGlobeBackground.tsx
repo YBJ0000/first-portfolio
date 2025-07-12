@@ -25,6 +25,8 @@ export default function VantaGlobeBackground() {
       scaleMobile: 1.0,
       color2: 0x606c3,
       backgroundColor: 0xafd5ed,
+      showLines: false, // 新增，去除网格线
+      showDots: false,  // 新增，去除网格点
     });
 
     return () => {
