@@ -1,17 +1,31 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import GLOBE from "vanta/dist/vanta.globe.min.js";
 
 export default function VantaGlobeBackground() {
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<object | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 监听窗口宽度变化
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
-    console.log('Globe useEffect 触发');
     if (typeof window === "undefined") return;
     if (!vantaRef.current) return;
-    if (vantaEffect.current) return;
+    if (vantaEffect.current) {
+      // 销毁旧的
+      (vantaEffect.current as { destroy: () => void }).destroy();
+      vantaEffect.current = null;
+    }
 
     vantaEffect.current = GLOBE({
       el: vantaRef.current,
@@ -21,12 +35,11 @@ export default function VantaGlobeBackground() {
       gyroControls: false,
       minHeight: 200.0,
       minWidth: 200.0,
-      scale: 1.0,
-      scaleMobile: 1.0,
+      scale: 1.0, // 只控制整体缩放
+      size: isMobile ? 0.7 : 1.0, // 响应式控制球体大小
       color2: 0x606c3,
       backgroundColor: 0xafd5ed,
-      showLines: false, // 新增，去除网格线
-      showDots: false,  // 新增，去除网格点
+      showDots: false,
     });
 
     return () => {
@@ -35,7 +48,7 @@ export default function VantaGlobeBackground() {
         vantaEffect.current = null;
       }
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div
