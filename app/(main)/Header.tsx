@@ -153,6 +153,20 @@ export function Header() {
     []
   )
 
+  // 新增首次访问主题提示相关状态
+  const [showThemeHint, setShowThemeHint] = React.useState(false)
+  React.useEffect(() => {
+    if (typeof window === 'undefined') return
+    if (window.localStorage.getItem('theme-hint-shown')) return
+    const timer = setTimeout(() => {
+      setShowThemeHint(true)
+      // 3秒后自动关闭
+      setTimeout(() => setShowThemeHint(false), 5000)
+      window.localStorage.setItem('theme-hint-shown', '1')
+    }, 3000)
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <>
       <motion.header
@@ -276,8 +290,38 @@ export function Header() {
                 animate={{ opacity: 1, y: 0, scale: 1 }}
               >
                 <UserInfo />
-                <div className="pointer-events-auto">
+                <div className="pointer-events-auto relative">
                   <ThemeSwitcher />
+                  {/* 新增首次访问提示，直接渲染，不用Tooltip上下文 */}
+                  <AnimatePresence>
+                    {showThemeHint && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -10, scale: 0.96 }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
+                        exit={{ opacity: 0, y: -10, scale: 0.95 }}
+                        transition={{ duration: 0.25 }}
+                        className="z-50 select-none absolute right-0 top-0"
+                        style={{ pointerEvents: 'auto' }}
+                        onClick={() => setShowThemeHint(false)}
+                      >
+                        <div
+                          className="overflow-hidden rounded-xl bg-gradient-to-b from-zinc-50/90 to-white/95 px-4 py-2 text-xs font-medium text-zinc-900 shadow-xl shadow-zinc-800/10 ring-1 ring-zinc-900/10 backdrop-blur transition dark:from-zinc-900/80 dark:to-zinc-800/95 dark:text-zinc-200 dark:ring-white/10 flex items-center gap-2"
+                          style={{ maxWidth: 240, minWidth: 160, wordBreak: 'break-all', textAlign: 'center' }}
+                        >
+                          <span className="flex-1 text-xs whitespace-nowrap">Switch themes here</span>
+                          <button
+                            className="ml-2 text-xs text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
+                            style={{ outline: 'none' }}
+                            tabIndex={-1}
+                            aria-label="关闭提示"
+                            onClick={e => { e.stopPropagation(); setShowThemeHint(false); }}
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </div>
               </motion.div>
               {/* 
