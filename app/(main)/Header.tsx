@@ -43,6 +43,10 @@ export function Header() {
   const avatarBorderScale = useMotionValue(1)
 
   React.useEffect(() => {
+    // 调试用：每次加载页面都清空 localStorage
+    if (typeof window !== 'undefined') {
+      window.localStorage.clear()
+    }
     const downDelay = avatarRef.current?.offsetTop ?? 0
     const upDelay = 64
 
@@ -305,12 +309,12 @@ export function Header() {
                         onClick={() => setShowThemeHint(false)}
                       >
                         <div
-                          className="overflow-hidden rounded-xl bg-gradient-to-b from-zinc-50/90 to-white/95 px-4 py-2 text-xs font-medium text-zinc-900 shadow-xl shadow-zinc-800/10 ring-1 ring-zinc-900/10 backdrop-blur transition dark:from-zinc-900/80 dark:to-zinc-800/95 dark:text-zinc-200 dark:ring-white/10 flex items-center gap-2"
+                          className="overflow-hidden rounded-xl bg-gradient-to-b from-zinc-50/90 to-white/95 px-4 py-2 text-xs font-medium text-zinc-900 shadow-xl shadow-zinc-800/10 ring-1 ring-zinc-900/10 backdrop-blur transition dark:from-zinc-900/80 dark:to-zinc-800/95 dark:text-zinc-200 dark:ring-white/10 flex flex-col items-center gap-2"
                           style={{ maxWidth: 240, minWidth: 160, wordBreak: 'break-all', textAlign: 'center' }}
                         >
                           <span className="flex-1 text-xs whitespace-nowrap">Switch themes here</span>
                           <button
-                            className="ml-2 text-xs text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200"
+                            className="ml-2 text-xs text-zinc-500 hover:text-zinc-800 dark:text-zinc-400 dark:hover:text-zinc-200 whitespace-nowrap"
                             style={{ outline: 'none' }}
                             tabIndex={-1}
                             aria-label="关闭提示"
