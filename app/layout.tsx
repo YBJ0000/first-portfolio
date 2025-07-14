@@ -35,20 +35,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: {
       default: seo.title,
-      template: '%s | Cali Castle',
+      template: '%s | Bingjia Yang',
     },
     description: seo.description,
-    siteName: 'Cali Castle',
+    siteName: 'Bingjia Yang',
     locale: 'zh_CN',
     type: 'website',
-    url: 'https://cali.so',
-  },
-  twitter: {
-    site: '@thecalicastle',
-    creator: '@thecalicastle',
-    card: 'summary_large_image',
-    title: seo.title,
-    description: seo.description,
+    url: 'https://www.ybj.au',
   },
   alternates: {
     canonical: url('/'),
