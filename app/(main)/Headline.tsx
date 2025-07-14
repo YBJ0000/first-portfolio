@@ -80,8 +80,8 @@ export function Headline() {
         }}
       >
         <Balancer>
-        This is Bingjia Yang. I am currently studying at the University of New South Wales, pursuing a Master’s degree in Information Technology and seeking a job in full-stack development.
-        Passionate about developing useful applications. &nbsp;
+          This is Bingjia Yang. I am currently studying at the University of New South Wales, pursuing a Master’s degree in Information Technology and seeking a job in full-stack development.
+          Passionate about developing useful applications. &nbsp;
           <PeekabooLink href="https://github.com/YBJ0000">My GitHub</PeekabooLink>
         </Balancer>
       </motion.p>
@@ -97,34 +97,9 @@ export function Headline() {
           delay: 0.25,
         }}
       >
-        <SocialLink
-          href="https://cali.so/twitter"
-          aria-label="我的推特"
-          platform="twitter"
-        />
-        <SocialLink
-          href="https://cali.so/youtube"
-          aria-label="我的 YouTube"
-          platform="youtube"
-        />
-        <SocialLink
-          href="https://cali.so/bilibili"
-          aria-label="我的 Bilibili"
-          platform="bilibili"
-        />
-        <SocialLink
-          href="https://cali.so/github"
-          aria-label="我的 GitHub"
-          platform="github"
-        />
-        <SocialLink
-          href="https://cali.so/tg"
-          aria-label="我的 Telegram"
-          platform="telegram"
-        />
         <SocialLink href="/feed.xml" platform="rss" aria-label="RSS 订阅" />
         <SocialLink
-          href="mailto:hi@cali.so"
+          href="mailto:yangbingjia1206@gmail.com"
           aria-label="我的邮箱"
           platform="mail"
         />

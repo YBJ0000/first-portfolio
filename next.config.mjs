@@ -23,41 +23,12 @@ const nextConfig = {
 
   redirects() {
     return [
-      {
-        "source": "/twitter",
-        "destination": "https://x.com/thecalicastle",
-        "permanent": true
-      },
-      {
-        "source": "/x",
-        "destination": "https://x.com/thecalicastle",
-        "permanent": true
-      },
-      {
-        "source": "/youtube",
-        "destination": "https://youtube.com/@calicastle",
-        "permanent": true
-      },
-      {
-        "source": "/tg",
-        "destination": "https://t.me/cali_so",
-        "permanent": true
-      },
-      {
-        "source": "/linkedin",
-        "destination": "https://www.linkedin.com/in/calicastle/",
-        "permanent": true
-      },
-      {
-        "source": "/github",
-        "destination": "https://github.com/CaliCastle",
-        "permanent": true
-      },
-      {
-        "source": "/bilibili",
-        "destination": "https://space.bilibili.com/8350251",
-        "permanent": true
-      }
+      // 你可以在这里添加你自己的重定向规则，例如：
+      // {
+      //   source: '/your-custom-path',
+      //   destination: 'https://your-destination-url',
+      //   permanent: true
+      // },
     ]
   },
 

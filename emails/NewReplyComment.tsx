@@ -6,13 +6,13 @@ import { Button, Heading, Hr, Img, Link, Section, Text } from './_components'
 import Layout from './Layout'
 
 const NewReplyCommentEmail = ({
-  postLink = 'https://cali.so',
-  postTitle = '测试文章 Lorem ipsum dolor sit amet, consectetur adipisicing elit',
-  postImageUrl = 'https://cn.zolplay.com/api/og?title=测试文章',
-  userFirstName = 'Cali',
-  userLastName = 'Castle',
-  userImageUrl = 'https://cali.so/icon.png',
-  commentContent = '*测试评论*\n- Wow wtf\n- Cool',
+  postLink = 'https://www.ybj.au',
+  postTitle = 'Test Article Lorem ipsum dolor sit amet, consectetur adipisicing elit',
+  postImageUrl = 'https://www.ybj.au/api/og?title=Test Article',
+  userFirstName = 'Bingjia',
+  userLastName = 'Yang',
+  userImageUrl = 'https://www.ybj.au/icon.png',
+  commentContent = '*Test comment*\n- Wow wtf\n- Cool',
 }: {
   postLink?: string | null
   postTitle?: string | null
@@ -26,7 +26,7 @@ const NewReplyCommentEmail = ({
     firstName: userFirstName,
     lastName: userLastName,
   })
-  const title = `👋 有人回复了你的评论`
+  const title = `👋 Someone replied to your comment`
 
   return (
     <Layout previewText={title}>
@@ -35,7 +35,7 @@ const NewReplyCommentEmail = ({
         {postImageUrl && (
           <Img
             src={postImageUrl}
-            alt=""
+            alt="Post preview"
             width="100%"
             className="mx-auto my-0"
           />
@@ -44,7 +44,7 @@ const NewReplyCommentEmail = ({
           {userImageUrl && (
             <Img
               src={userImageUrl}
-              alt=""
+              alt="User avatar"
               width="24"
               height="24"
               className="rounded-full"
@@ -53,11 +53,11 @@ const NewReplyCommentEmail = ({
         </Text>
         {postLink && (
           <Text className="text-[14px] leading-[24px] text-black">
-            <b>{user}</b>&nbsp;在 「
+            <b>{user}</b>&nbsp;replied to you in "
             <Link href={postLink} className="font-bold underline">
               {postTitle}
             </Link>
-            」中回复了你：
+            ":
           </Text>
         )}
       </Section>
@@ -76,13 +76,13 @@ const NewReplyCommentEmail = ({
             className="rounded-xl bg-zinc-900 text-center text-[12px] font-semibold text-white no-underline"
             href={postLink}
           >
-            查看文章
+            View article
           </Button>
         )}
       </Section>
       {postLink && (
         <Text className="text-[14px] leading-[24px] text-black">
-          或者复制下面的链接到你的浏览器中进行访问：
+          Or copy and paste the following link into your browser:
           <br />
           <Link href={postLink} className="text-blue-600 no-underline">
             {postLink}
