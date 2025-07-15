@@ -38,7 +38,7 @@ export function Activity() {
       enabled:
         typeof window === 'undefined'
           ? false
-          : new URL(window.location.href).hostname === 'cali.so',
+          : new URL(window.location.href).hostname === 'ybj.au',
     }
   )
   const [open, setOpen] = React.useState(false)
@@ -84,7 +84,7 @@ export function Activity() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                 >
-                  Cali 在使用 {appLabels[app] ?? app}
+                  Bingjia Yang is using {appLabels[app] ?? app}
                 </motion.div>
               </Tooltip.Content>
             </Tooltip.Portal>

@@ -6,11 +6,11 @@ import { Button, Heading, Hr, Img, Section, Text } from './_components'
 import Layout from './Layout'
 
 const NewGuestbookEmail = ({
-  link = 'https://caliso/guestbook',
-  userFirstName = 'Cali',
-  userLastName = 'Castle',
-  userImageUrl = 'https://cali.so/icon.png',
-  commentContent = '*测试评论*\n- Wow wtf\n- Cool',
+  link = 'https://www.ybj.au/guestbook',
+  userFirstName = 'Bingjia',
+  userLastName = 'Yang',
+  userImageUrl = 'https://www.ybj.au/icon.png',
+  commentContent = '*Test comment*\n- Wow wtf\n- Cool',
 }: {
   link?: string | null
   userFirstName?: string | null
@@ -22,7 +22,7 @@ const NewGuestbookEmail = ({
     firstName: userFirstName,
     lastName: userLastName,
   })
-  const title = `有人在留言墙留言啦`
+  const title = `New message on the guestbook!`
 
   return (
     <Layout previewText={title}>
@@ -32,7 +32,7 @@ const NewGuestbookEmail = ({
           {userImageUrl && (
             <Img
               src={userImageUrl}
-              alt=""
+              alt="Guest avatar"
               width="24"
               height="24"
               className="rounded-full"
@@ -40,7 +40,7 @@ const NewGuestbookEmail = ({
           )}
         </Text>
         <Text className="text-[14px] leading-[24px] text-black">
-          <b>{user}</b>&nbsp;在留言墙留言：
+          <b>{user}</b>&nbsp;left a message on the guestbook:
         </Text>
       </Section>
 
@@ -58,7 +58,7 @@ const NewGuestbookEmail = ({
             className="rounded-xl bg-zinc-900 text-center text-[12px] font-semibold text-white no-underline"
             href={link}
           >
-            查看留言
+            View message
           </Button>
         )}
       </Section>
