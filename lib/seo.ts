@@ -1,7 +1,7 @@
 export const seo = {
-  title: 'Bingjia Yang | Developer/Designer/DevOps/Debugger',
+  title: 'Bingjia Yang | 羊炳嘉 | ybj | Full Stack Developer | UNSW | 博客 | Portfolio | 前端 | React | Next.js | 个人主页 | 技术博客 | Australia | Sydney',
   description:
-    'I am a highly adaptable Full Stack Developer with experience building scalable web apps using modern frameworks and cloud tools like React, Next.js, Node.js, Docker, and AWS EC2. I enjoy working across both frontend and backend, and I thrive in cross-functional teams where I can solve real-world problems with clean, scalable code.',
+    'Bingjia Yang (羊炳嘉, ybj)，全栈开发者，UNSW硕士，专注于Web开发、React、Next.js、Node.js。个人博客与作品集，分享技术、生活与成长经历。Full Stack Developer, Portfolio, Blog, UNSW, Australia, Sydney.',
   url: new URL(
     process.env.NODE_ENV === 'production'
       ? 'https://ybj.au'

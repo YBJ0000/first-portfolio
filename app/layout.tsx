@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     default: seo.title,
   },
   description: seo.description,
-  keywords: 'Bingjia Yang,羊炳嘉,Developer,Designer,Frontend Engineer,Web Developer,React Developer,Next.js',
+  keywords: 'Bingjia Yang,羊炳嘉,ybj,Full Stack Developer,UNSW,Portfolio,博客,前端,React,Next.js,个人主页,技术博客,Australia,Sydney',
   manifest: '/site.webmanifest',
   robots: {
     index: true,
