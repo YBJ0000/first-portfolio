@@ -46,3 +46,5 @@ static/
 
 .react-email/
 /.idea
+
+.claude/
