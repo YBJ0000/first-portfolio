@@ -19,7 +19,7 @@ export const newsletterFormSchema = z.object({
 })
 export type NewsletterForm = z.infer<typeof newsletterFormSchema>
 
-export function Newsletter({ subCount }: { subCount?: string }) {
+export function Newsletter() {
   const {
     register,
     handleSubmit,
@@ -81,12 +81,7 @@ export function Newsletter({ subCount }: { subCount?: string }) {
       <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-400 md:text-sm">
         <span>If you enjoy my content, feel free to subscribe and support me. 🫶</span>
         <br />
-        {subCount && (
-          <span>
-            Join <span className="font-medium">{subCount}</span> other subscribers. 
-          </span>
-        )}
-        <span> One email per month, unsubscribe anytime.</span>
+        <span>One email per month, unsubscribe anytime.</span>
       </p>
       <AnimatePresence mode="wait">
         {!isSubscribed ? (
