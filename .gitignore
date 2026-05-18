@@ -47,4 +47,5 @@ static/
 .react-email/
 /.idea
 
-.claude/
+# claude code (keep skills/config, ignore local worktrees)
+.claude/worktrees/
