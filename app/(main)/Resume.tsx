@@ -13,7 +13,7 @@ type Resume = {
 
 export function Resume({ resume }: { resume: Resume[] }) {
   return (
-    <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
+    <div className="fa-surface rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-5 w-5 flex-none" />
         <span className="ml-2">工作经历</span>

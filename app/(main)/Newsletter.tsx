@@ -68,7 +68,7 @@ export function Newsletter() {
   return (
     <form
       className={clsxm(
-        'relative rounded-2xl border border-zinc-100 p-6 transition-opacity dark:border-zinc-700/40',
+        'fa-surface relative rounded-2xl border border-zinc-100 p-6 transition-opacity dark:border-zinc-700/40',
         isSubmitting && 'pointer-events-none opacity-70'
       )}
       onSubmit={handleSubmit(onSubmit)}

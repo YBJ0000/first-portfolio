@@ -1,4 +1,5 @@
 import './globals.css'
+import './frutiger-aero.css'
 import './clerk.css'
 import './prism.css'
 
@@ -75,6 +76,7 @@ export default function RootLayout({
             attribute="class"
             defaultTheme="system"
             enableSystem
+            themes={['light', 'dark', 'frutiger-aero']}
             disableTransitionOnChange
           >
             <VantaBackgroundSwitcher />
