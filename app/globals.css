@@ -16,6 +16,9 @@ html.light {
 html.dark {
   --bg-color: theme('colors.primary.900');
 }
+html.frutiger-aero {
+  --bg-color: #b4e7f7;
+}
 
 [data-radix-popper-content-wrapper] {
   z-index: 99999 !important;
